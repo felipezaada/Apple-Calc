@@ -11,13 +11,16 @@ import javax.swing.JOptionPane;
  * @author felip
  */
 public class CalculadoraFelipe extends javax.swing.JFrame {
+
+    /**
+     * @return the jTextField1
+     */
+    public javax.swing.JTextField getjTextField1() {
+        return jTextField1;
+    }
        
     Calculos calculos = new Calculos();
     
-    String txtNum1;
-    String txtNum2;
-    double num1;
-    double num2;
     char escolha;
     /**
      * Creates new form calculadoraFelipe
@@ -481,32 +484,11 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Botao6(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao6
-
-        if(escolha == '\0'){
-            txtNum1 = jTextField1.getText();
-            txtNum1 = txtNum1 + "6";
-            jTextField1.setText(txtNum1);
-        }else{
-            txtNum2 = jTextField1.getText();
-            txtNum2 = txtNum2 + "6";
-            jTextField1.setText(txtNum2);
-        }
-            num1 = Double.parseDouble(txtNum1);
-            num2 = Double.parseDouble(txtNum2);
+        calculos.Inserir(jTextField1, escolha, "6");
     }//GEN-LAST:event_Botao6
 
     private void Botao9(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao9
-        if(escolha == '\0'){
-            txtNum1 = jTextField1.getText();
-            txtNum1 = txtNum1 + "9";
-            jTextField1.setText(txtNum1);
-        }else{
-            txtNum2 = jTextField1.getText();
-            txtNum2 = txtNum2 + "9";
-            jTextField1.setText(txtNum2);
-        }
-            num1 = Double.parseDouble(txtNum1);
-            num2 = Double.parseDouble(txtNum2);
+        calculos.Inserir(jTextField1, escolha, "9");
     }//GEN-LAST:event_Botao9
 
     private void BotaoMenos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMenos
@@ -525,35 +507,26 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoPorcentagem
 
     private void BotaoAC(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAC
-        txtNum1 = "";
-        txtNum2 = "";
-        num1 = 0.0;
-        num2 = 0.0;
+        calculos.txtNum1 = "";
+        calculos.txtNum2 = "";
+        calculos.num1 = 0.0;
+        calculos.num2 = 0.0;
         escolha = '\0';
         jTextField1.setText("");
     }//GEN-LAST:event_BotaoAC
 
     private void BotaoMaisMenos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMaisMenos
-
+        jTextField1.setText("");
+        escolha = ',';
     }//GEN-LAST:event_BotaoMaisMenos
 
     private void BotaoIgual(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoIgual
-        calculos.Calcular(num1, num2, escolha);
+        calculos.Calcular(escolha);
         jTextField1.setText(Double.toString(calculos.resultado));
     }//GEN-LAST:event_BotaoIgual
 
     private void Botao3(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao3
-        if(escolha == '\0'){
-            txtNum1 = jTextField1.getText();
-            txtNum1 = txtNum1 + "3";
-            jTextField1.setText(txtNum1);
-        }else{
-            txtNum2 = jTextField1.getText();
-            txtNum2 = txtNum2 + "3";
-            jTextField1.setText(txtNum2);
-        }
-            num1 = Double.parseDouble(txtNum1);
-            num2 = Double.parseDouble(txtNum2);
+        calculos.Inserir(jTextField1, escolha, "3");
     }//GEN-LAST:event_Botao3
 
     private void BotaoDivisao(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoDivisao
@@ -562,45 +535,15 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoDivisao
 
     private void Botao1(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao1
-        if(escolha == '\0'){
-            txtNum1 = jTextField1.getText();
-            txtNum1 = txtNum1 + "1";
-            jTextField1.setText(txtNum1);
-        }else{
-            txtNum2 = jTextField1.getText();
-            txtNum2 = txtNum2 + "1";
-            jTextField1.setText(txtNum2);
-        }
-            num1 = Double.parseDouble(txtNum1);
-            num2 = Double.parseDouble(txtNum2);
+        calculos.Inserir(jTextField1, escolha, "1");
     }//GEN-LAST:event_Botao1
 
     private void Botao0(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao0
-        if(escolha == '\0'){
-            txtNum1 = jTextField1.getText();
-            txtNum1 = txtNum1 + "0";
-            jTextField1.setText(txtNum1);
-        }else{
-            txtNum2 = jTextField1.getText();
-            txtNum2 = txtNum2 + "0";
-            jTextField1.setText(txtNum2);
-        }
-            num1 = Double.parseDouble(txtNum1);
-            num2 = Double.parseDouble(txtNum2);
+        calculos.Inserir(jTextField1, escolha, "0");
     }//GEN-LAST:event_Botao0
 
     private void BotaoPonto(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoPonto
-        if(escolha == '\0'){
-            txtNum1 = jTextField1.getText();
-            txtNum1 = txtNum1 + ".";
-            jTextField1.setText(txtNum1);
-            num1 = Double.parseDouble(txtNum1);
-        }else{
-            txtNum2 = jTextField1.getText();
-            txtNum2 = txtNum2 + ".";
-            jTextField1.setText(txtNum2);
-            num2 = Double.parseDouble(txtNum2);
-        }
+        calculos.InserirPonto(jTextField1, escolha, ".");
     }//GEN-LAST:event_BotaoPonto
 
     private void BotaoMais(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMais
@@ -609,73 +552,23 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoMais
 
     private void Botao2(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao2
-        if(escolha == '\0'){
-            txtNum1 = jTextField1.getText();
-            txtNum1 = txtNum1 + "2";
-            jTextField1.setText(txtNum1);
-        }else{
-            txtNum2 = jTextField1.getText();
-            txtNum2 = txtNum2 + "2";
-            jTextField1.setText(txtNum2);
-        }
-            num1 = Double.parseDouble(txtNum1);
-            num2 = Double.parseDouble(txtNum2);
+        calculos.Inserir(jTextField1, escolha, "2");
     }//GEN-LAST:event_Botao2
 
     private void Botao4(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao4
-        if(escolha == '\0'){
-            txtNum1 = jTextField1.getText();
-            txtNum1 = txtNum1 + "4";
-            jTextField1.setText(txtNum1);
-        }else{
-            txtNum2 = jTextField1.getText();
-            txtNum2 = txtNum2 + "4";
-            jTextField1.setText(txtNum2);
-        }
-            num1 = Double.parseDouble(txtNum1);
-            num2 = Double.parseDouble(txtNum2);
+        calculos.Inserir(jTextField1, escolha, "4");
     }//GEN-LAST:event_Botao4
 
     private void Botao5(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao5
-        if(escolha == '\0'){
-            txtNum1 = jTextField1.getText();
-            txtNum1 = txtNum1 + "5";
-            jTextField1.setText(txtNum1);
-        }else{
-            txtNum2 = jTextField1.getText();
-            txtNum2 = txtNum2 + "5";
-            jTextField1.setText(txtNum2);
-        }
-            num1 = Double.parseDouble(txtNum1);
-            num2 = Double.parseDouble(txtNum2);
+        calculos.Inserir(jTextField1, escolha, "5");
     }//GEN-LAST:event_Botao5
 
     private void Botao8(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao8
-        if(escolha == '\0'){
-            txtNum1 = jTextField1.getText();
-            txtNum1 = txtNum1 + "8";
-            jTextField1.setText(txtNum1);
-        }else{
-            txtNum2 = jTextField1.getText();
-            txtNum2 = txtNum2 + "8";
-            jTextField1.setText(txtNum2);
-        }
-            num1 = Double.parseDouble(txtNum1);
-            num2 = Double.parseDouble(txtNum2);
+        calculos.Inserir(jTextField1, escolha, "8");
     }//GEN-LAST:event_Botao8
 
     private void Botao7(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao7
-       if(escolha == '\0'){
-            txtNum1 = jTextField1.getText();
-            txtNum1 = txtNum1 + "7";
-            jTextField1.setText(txtNum1);
-        }else{
-            txtNum2 = jTextField1.getText();
-            txtNum2 = txtNum2 + "7";
-            jTextField1.setText(txtNum2);
-        }
-            num1 = Double.parseDouble(txtNum1);
-            num2 = Double.parseDouble(txtNum2);
+        calculos.Inserir(jTextField1, escolha, "7");
     }//GEN-LAST:event_Botao7
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
