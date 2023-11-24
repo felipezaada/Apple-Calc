@@ -11,6 +11,7 @@ package com.mycompany.calcfelipe;
 public class CalcFelipe {
 
     public static void main(String[] args) {
+        
         new CalculadoraFelipe().setVisible(true);
         
     }

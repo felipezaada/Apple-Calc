@@ -5,7 +5,7 @@
 package com.mycompany.calcfelipe;
 
 import javax.swing.JOptionPane;
-
+import java.math.BigDecimal;
 /**
  *
  * @author felip
@@ -63,13 +63,14 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setLocation(new java.awt.Point(0, 0));
         setMaximumSize(new java.awt.Dimension(0, 0));
-        setPreferredSize(new java.awt.Dimension(390, 700));
+        setPreferredSize(new java.awt.Dimension(390, 690));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setMaximumSize(null);
-        jPanel1.setMinimumSize(null);
-        jPanel1.setPreferredSize(new java.awt.Dimension(390, 700));
+        jPanel1.setPreferredSize(new java.awt.Dimension(390, 650));
 
         BotaoAC.setBackground(new java.awt.Color(204, 204, 204));
         BotaoAC.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
@@ -475,9 +476,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 700, Short.MAX_VALUE)
         );
 
         pack();
@@ -509,8 +508,9 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
     private void BotaoAC(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAC
         calculos.txtNum1 = "";
         calculos.txtNum2 = "";
-        calculos.num1 = 0.0;
-        calculos.num2 = 0.0;
+        calculos.num1 = BigDecimal.ZERO;
+        calculos.num2 = BigDecimal.ZERO;
+        calculos.resultado = BigDecimal.ZERO;
         escolha = '\0';
         jTextField1.setText("");
     }//GEN-LAST:event_BotaoAC
@@ -522,7 +522,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
 
     private void BotaoIgual(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoIgual
         calculos.Calcular(escolha);
-        jTextField1.setText(Double.toString(calculos.resultado));
+        jTextField1.setText(calculos.resultado.toString());
     }//GEN-LAST:event_BotaoIgual
 
     private void Botao3(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao3
