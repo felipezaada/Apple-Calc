@@ -13,8 +13,8 @@ public class Calculos {
     
     String txtNum1;
     String txtNum2;
-    BigDecimal num1;
-    BigDecimal num2;
+    BigDecimal num1 = BigDecimal.ZERO;
+    BigDecimal num2 = BigDecimal.ZERO;
     BigDecimal resultado = BigDecimal.ZERO;
     
     public BigDecimal Calcular(char escolha){
@@ -45,7 +45,8 @@ public class Calculos {
     public void Inserir(javax.swing.JTextField jTextField1, char escolha, String click){
         
         if(resultado != BigDecimal.ZERO){
-                num1 = resultado;
+            num1 = resultado;
+            jTextField1.setText("");
         }
         
         if(escolha == '\0'){
