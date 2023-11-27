@@ -4,7 +4,6 @@
  */
 package com.mycompany.calcfelipe;
 
-import javax.swing.JOptionPane;
 import java.math.BigDecimal;
 /**
  *
@@ -83,6 +82,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calculadora Apple");
         setBackground(new java.awt.Color(0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocation(new java.awt.Point(0, 0));
@@ -548,6 +548,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
         calculos.num1 = BigDecimal.ZERO;
         calculos.num2 = BigDecimal.ZERO;
         calculos.resultado = BigDecimal.ZERO;
+        calculos.divZero = false;
         escolha = '\0';
         jTextField2.setText("");
         jTextField1.setText("");
@@ -559,8 +560,10 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoMaisMenos
 
     private void BotaoIgual(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoIgual
-        calculos.Calcular(escolha, getjTextField2());
-        getjTextField1().setText(calculos.resultado.toString());
+        calculos.Calcular(escolha, getjTextField2(), getjTextField1());
+        if(calculos.divZero == false){
+            getjTextField1().setText(calculos.resultado.toString());
+        }
     }//GEN-LAST:event_BotaoIgual
 
     private void Botao3(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao3
