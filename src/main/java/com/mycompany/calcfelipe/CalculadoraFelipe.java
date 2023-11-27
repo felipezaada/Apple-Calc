@@ -13,6 +13,27 @@ import java.math.BigDecimal;
 public class CalculadoraFelipe extends javax.swing.JFrame {
 
     /**
+     * @param jTextField1 the jTextField1 to set
+     */
+    public void setjTextField1(javax.swing.JTextField jTextField1) {
+        this.jTextField1 = jTextField1;
+    }
+
+    /**
+     * @return the jTextField2
+     */
+    public javax.swing.JTextField getjTextField2() {
+        return jTextField2;
+    }
+
+    /**
+     * @param jTextField2 the jTextField2 to set
+     */
+    public void setjTextField2(javax.swing.JTextField jTextField2) {
+        this.jTextField2 = jTextField2;
+    }
+
+    /**
      * @return the jTextField1
      */
     public javax.swing.JTextField getjTextField1() {
@@ -59,6 +80,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
         Botao1 = new javax.swing.JButton();
         BotaoDivisao = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -373,15 +395,27 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
             }
         });
 
+        jTextField2.setEditable(false);
+        jTextField2.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField2.setToolTipText("");
+        jTextField2.setBorder(null);
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(Botao0, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(BotaoPonto, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -419,15 +453,18 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BotaoMenos, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BotaoVezes, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BotaoDivisao, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(BotaoDivisao, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jTextField2))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addContainerGap()
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(BotaoVezes, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -463,7 +500,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(BotaoPonto, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(BotaoIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(113, 113, 113))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
 
         BotaoMais.getAccessibleContext().setAccessibleName("jButton7");
@@ -476,32 +513,32 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 700, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void Botao6(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao6
-        calculos.Inserir(jTextField1, escolha, "6");
+        calculos.Inserir(getjTextField1(), escolha, "6");
     }//GEN-LAST:event_Botao6
 
     private void Botao9(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao9
-        calculos.Inserir(jTextField1, escolha, "9");
+        calculos.Inserir(getjTextField1(), escolha, "9");
     }//GEN-LAST:event_Botao9
 
     private void BotaoMenos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMenos
-        jTextField1.setText("");
+        getjTextField1().setText("");
         escolha = '-';
     }//GEN-LAST:event_BotaoMenos
 
     private void BotaoVezes(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoVezes
-        jTextField1.setText("");
+        getjTextField1().setText("");
         escolha = 'x';
     }//GEN-LAST:event_BotaoVezes
 
     private void BotaoPorcentagem(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoPorcentagem
-        jTextField1.setText("");
+        getjTextField1().setText("");
         escolha = '%';
     }//GEN-LAST:event_BotaoPorcentagem
 
@@ -512,68 +549,73 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
         calculos.num2 = BigDecimal.ZERO;
         calculos.resultado = BigDecimal.ZERO;
         escolha = '\0';
+        jTextField2.setText("");
         jTextField1.setText("");
     }//GEN-LAST:event_BotaoAC
 
     private void BotaoMaisMenos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMaisMenos
-        jTextField1.setText("");
+        getjTextField1().setText("");
         escolha = ',';
     }//GEN-LAST:event_BotaoMaisMenos
 
     private void BotaoIgual(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoIgual
-        calculos.Calcular(escolha);
-        jTextField1.setText(calculos.resultado.toString());
+        calculos.Calcular(escolha, getjTextField2());
+        getjTextField1().setText(calculos.resultado.toString());
     }//GEN-LAST:event_BotaoIgual
 
     private void Botao3(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao3
-        calculos.Inserir(jTextField1, escolha, "3");
+        calculos.Inserir(getjTextField1(), escolha, "3");
     }//GEN-LAST:event_Botao3
 
     private void BotaoDivisao(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoDivisao
-        jTextField1.setText("");
+        getjTextField1().setText("");
         escolha = '/';
     }//GEN-LAST:event_BotaoDivisao
 
     private void Botao1(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao1
-        calculos.Inserir(jTextField1, escolha, "1");
+        calculos.Inserir(getjTextField1(), escolha, "1");
     }//GEN-LAST:event_Botao1
 
     private void Botao0(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao0
-        calculos.Inserir(jTextField1, escolha, "0");
+        calculos.Inserir(getjTextField1(), escolha, "0");
     }//GEN-LAST:event_Botao0
 
     private void BotaoPonto(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoPonto
-        calculos.InserirPonto(jTextField1, escolha, ".");
+        calculos.InserirPonto(getjTextField1(), escolha, ".");
     }//GEN-LAST:event_BotaoPonto
 
     private void BotaoMais(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMais
-        jTextField1.setText("");
+        getjTextField1().setText("");
         escolha = '+';
     }//GEN-LAST:event_BotaoMais
 
     private void Botao2(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao2
-        calculos.Inserir(jTextField1, escolha, "2");
+        calculos.Inserir(getjTextField1(), escolha, "2");
     }//GEN-LAST:event_Botao2
 
     private void Botao4(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao4
-        calculos.Inserir(jTextField1, escolha, "4");
+        calculos.Inserir(getjTextField1(), escolha, "4");
     }//GEN-LAST:event_Botao4
 
     private void Botao5(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao5
-        calculos.Inserir(jTextField1, escolha, "5");
+        calculos.Inserir(getjTextField1(), escolha, "5");
     }//GEN-LAST:event_Botao5
 
     private void Botao8(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao8
-        calculos.Inserir(jTextField1, escolha, "8");
+        calculos.Inserir(getjTextField1(), escolha, "8");
     }//GEN-LAST:event_Botao8
 
     private void Botao7(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao7
-        calculos.Inserir(jTextField1, escolha, "7");
+        calculos.Inserir(getjTextField1(), escolha, "7");
     }//GEN-LAST:event_Botao7
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
 
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -633,5 +675,6 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
     private javax.swing.JButton BotaoVezes;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

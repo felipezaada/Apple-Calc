@@ -15,13 +15,14 @@ public class Calculos {
     String txtNum1;
     String txtNum2;
     String verifJ;
+    String historico;
     double resultadoF;
     double parteDecimal;
     BigDecimal num1 = BigDecimal.ZERO;
     BigDecimal num2 = BigDecimal.ZERO;
     BigDecimal resultado = BigDecimal.ZERO;
     
-    public BigDecimal Calcular(char escolha){
+    public BigDecimal Calcular(char escolha, javax.swing.JTextField jTextField2){
         
         switch (escolha) {
             case '+':
@@ -31,7 +32,7 @@ public class Calculos {
                 resultadoF = num1.doubleValue() / num2.doubleValue();
                 parteDecimal =  resultadoF - Math.floor(resultadoF);
                 if(parteDecimal != 0){
-                    resultado = num1.divide(num2, 3, BigDecimal.ROUND_HALF_UP);
+                    resultado = num1.divide(num2, 2, BigDecimal.ROUND_HALF_UP);
                 }else{
                     resultado = num1.divide(num2, 0, BigDecimal.ROUND_HALF_UP);
                 }
@@ -49,7 +50,10 @@ public class Calculos {
                 resultado = BigDecimal.ZERO;
                 break;
         }     
-
+        
+        historico = jTextField2.getText();
+        historico = historico + (num1 + " " + escolha + " " + num2 + " = " + resultado + "    /    ");
+        jTextField2.setText(historico);
         return resultado;
         
     }
