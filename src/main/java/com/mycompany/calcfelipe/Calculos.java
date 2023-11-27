@@ -5,12 +5,13 @@
 package com.mycompany.calcfelipe;
 
 import java.math.BigDecimal;
+
 /**
  *
  * @author felip
  */
 public class Calculos {
-    
+
     String txtNum1;
     String txtNum2;
     String verifJ;
@@ -18,29 +19,29 @@ public class Calculos {
     String erro = "ERRO!";
     boolean resultadoV = false;
     boolean divZero = false;
-    double resultadoF;
-    double parteDecimal;
+    double resultadoF = 0.0;
+    double parteDecimal = 0.0;
     BigDecimal num1 = BigDecimal.ZERO;
     BigDecimal num2 = BigDecimal.ZERO;
     BigDecimal resultado = BigDecimal.ZERO;
-    
-    public BigDecimal Calcular(char escolha, javax.swing.JTextField jTextField2, javax.swing.JTextField jTextField1){
-        
+
+    public BigDecimal Calcular(char escolha, javax.swing.JTextField jTextField2, javax.swing.JTextField jTextField1) {
+
         switch (escolha) {
             case '+':
                 resultado = num1.add(num2);
                 break;
             case '/':
-                if(num2.doubleValue() == 0){
+                if (num2.doubleValue() == 0) {
                     divZero = true;
                     resultadoV = false;
                     break;
                 }
                 resultadoF = num1.doubleValue() / num2.doubleValue();
-                parteDecimal =  resultadoF - Math.floor(resultadoF);
-                if(parteDecimal != 00){
+                parteDecimal = resultadoF - Math.floor(resultadoF);
+                if (parteDecimal != 00) {
                     resultado = num1.divide(num2, 2, BigDecimal.ROUND_HALF_UP);
-                }else{
+                } else {
                     resultado = num1.divide(num2, 0, BigDecimal.ROUND_HALF_UP);
                 }
                 break;
@@ -56,69 +57,73 @@ public class Calculos {
             case '\0':
                 resultado = num1;
                 break;
-        }     
-        
-        if(divZero == false && escolha != '\0'){
+        }
+
+        if (divZero == false && escolha != '\0') {
             historico = jTextField2.getText();
             historico = historico + (num1 + " " + escolha + " " + num2 + " = " + resultado + "    /    ");
             jTextField2.setText(historico);
             resultadoV = true;
             return resultado;
         }
-        
-        if(divZero == true){
+
+        if (divZero == true) {
             jTextField1.setText(erro);
             resultadoV = false;
         }
-        
+
         return resultado;
-        
+
     }
-    
-    public void Inserir(javax.swing.JTextField jTextField1, char escolha, String click){   
-        
-        if(divZero == true && escolha != '\0'){
+
+    public void Inserir(javax.swing.JTextField jTextField1, char escolha, String click) {
+
+        if (divZero == true && escolha != '\0') {
             jTextField1.setText(erro);
         }
-        
-        if(jTextField1.getText().equals(resultado.toString())){
+
+        if (jTextField1.getText().equals(resultado.toString())) {
             click = "";
         }
-        
+
         if (resultadoV == true && !jTextField1.getText().equals(erro)) {
             num1 = resultado;
             resultadoV = false;
         }
-        
-        if(escolha == '\0' && !jTextField1.getText().equals(erro)){
+
+        if (escolha == '\0' && !jTextField1.getText().equals(erro)) {
             txtNum1 = jTextField1.getText().trim().isEmpty() ? click : jTextField1.getText().trim() + click;
             jTextField1.setText(txtNum1);
             num1 = new BigDecimal(txtNum1);
-        }else if(escolha != '\0' && !jTextField1.getText().equals(erro)){
+        } else if (escolha != '\0' && !jTextField1.getText().equals(erro)) {
             txtNum2 = jTextField1.getText().trim().isEmpty() ? click : jTextField1.getText().trim() + click;
             jTextField1.setText(txtNum2);
             num2 = new BigDecimal(txtNum2);
         }
-        
+
     }
 
-    public void InserirPonto(javax.swing.JTextField jTextField1, char escolha, String click){
-        
+    public void InserirPonto(javax.swing.JTextField jTextField1, char escolha, String click) {
+
         verifJ = jTextField1.getText();
-        
-        if(jTextField1.getText().equals(resultado.toString()) || verifJ.contains(String.valueOf('.')) || jTextField1.getText().equals(erro)){
+
+        if (verifJ.equals(erro) && !click.equals("")) {
             click = "";
         }
-        
-        if(escolha == '\0'){
+
+        if (verifJ.equals(resultado.toString()) || verifJ.contains(String.valueOf('.'))) {
+            click = "";
+        }
+
+        if (escolha == '\0' && !jTextField1.getText().equals(erro)) {
             txtNum1 = jTextField1.getText().trim().isEmpty() ? click : jTextField1.getText().trim() + click;
             jTextField1.setText(txtNum1);
             num1 = new BigDecimal(txtNum1);
-        }else{
+        } else if (escolha != '\0' && !jTextField1.getText().equals(erro)) {
             txtNum2 = jTextField1.getText().trim().isEmpty() ? click : jTextField1.getText().trim() + click;
             jTextField1.setText(txtNum2);
             num2 = new BigDecimal(txtNum2);
         }
     }
-   
+
 }

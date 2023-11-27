@@ -5,6 +5,7 @@
 package com.mycompany.calcfelipe;
 
 import java.math.BigDecimal;
+
 /**
  *
  * @author felip
@@ -38,10 +39,11 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
     public javax.swing.JTextField getjTextField1() {
         return jTextField1;
     }
-       
+
     Calculos calculos = new Calculos();
-    
+
     char escolha;
+
     /**
      * Creates new form calculadoraFelipe
      */
@@ -528,17 +530,23 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
     }//GEN-LAST:event_Botao9
 
     private void BotaoMenos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMenos
-        getjTextField1().setText("");
+        if (!jTextField1.getText().equals(calculos.erro)) {
+            getjTextField1().setText("");
+        }
         escolha = '-';
     }//GEN-LAST:event_BotaoMenos
 
     private void BotaoVezes(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoVezes
-        getjTextField1().setText("");
+        if (!jTextField1.getText().equals(calculos.erro)) {
+            getjTextField1().setText("");
+        }
         escolha = 'x';
     }//GEN-LAST:event_BotaoVezes
 
     private void BotaoPorcentagem(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoPorcentagem
-        getjTextField1().setText("");
+        if (!jTextField1.getText().equals(calculos.erro)) {
+            getjTextField1().setText("");
+        }
         escolha = '%';
     }//GEN-LAST:event_BotaoPorcentagem
 
@@ -555,13 +563,15 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoAC
 
     private void BotaoMaisMenos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMaisMenos
-        getjTextField1().setText("");
+        if (!jTextField1.getText().equals(calculos.erro)) {
+            getjTextField1().setText("");
+        }
         escolha = ',';
     }//GEN-LAST:event_BotaoMaisMenos
 
     private void BotaoIgual(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoIgual
         calculos.Calcular(escolha, getjTextField2(), getjTextField1());
-        if(calculos.divZero == false){
+        if (calculos.divZero == false) {
             getjTextField1().setText(calculos.resultado.toString());
         }
     }//GEN-LAST:event_BotaoIgual
@@ -571,7 +581,9 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
     }//GEN-LAST:event_Botao3
 
     private void BotaoDivisao(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoDivisao
-        getjTextField1().setText("");
+        if (!jTextField1.getText().equals(calculos.erro)) {
+            getjTextField1().setText("");
+        }
         escolha = '/';
     }//GEN-LAST:event_BotaoDivisao
 
@@ -588,7 +600,9 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoPonto
 
     private void BotaoMais(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMais
-        getjTextField1().setText("");
+        if (!jTextField1.getText().equals(calculos.erro)) {
+            getjTextField1().setText("");
+        }
         escolha = '+';
     }//GEN-LAST:event_BotaoMais
 
