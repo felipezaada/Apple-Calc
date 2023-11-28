@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  * @author felip
  */
 public class Calculos {
-    
+
     String txtNum1;
     String txtNum2;
     String verifJ;
@@ -26,7 +26,7 @@ public class Calculos {
     BigDecimal resultado = BigDecimal.ZERO;
 
     public BigDecimal Calcular(char escolha, javax.swing.JTextField jTextField2, javax.swing.JTextField jTextField1) {
-        
+
         switch (escolha) {
             case '+':
                 resultado = num1.add(num2);
@@ -59,12 +59,18 @@ public class Calculos {
                 break;
         }
 
-        if (divZero == false && escolha != '\0') {
+        resultado = resultado.setScale(2, BigDecimal.ROUND_HALF_UP);
+
+        if (escolha == '\0') {
+            historico = jTextField2.getText();
+            historico = historico + (resultado + " = " + resultado + "    /    ");
+            jTextField2.setText(historico);
+            resultadoV = true;
+        } else if (divZero == false && escolha != '\0') {
             historico = jTextField2.getText();
             historico = historico + (num1 + " " + escolha + " " + num2 + " = " + resultado + "    /    ");
             jTextField2.setText(historico);
             resultadoV = true;
-            return resultado;
         }
 
         if (divZero == true) {
@@ -111,7 +117,7 @@ public class Calculos {
             click = "";
         }
 
-        if (verifJ.equals(resultado.toString()) || verifJ.contains(String.valueOf('.'))) {
+        if (resultadoV == true || verifJ.contains(String.valueOf('.'))) {
             click = "";
         }
 
