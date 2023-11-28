@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  * @author felip
  */
 public class Calculos {
-
+    
     String txtNum1;
     String txtNum2;
     String verifJ;
@@ -26,7 +26,7 @@ public class Calculos {
     BigDecimal resultado = BigDecimal.ZERO;
 
     public BigDecimal Calcular(char escolha, javax.swing.JTextField jTextField2, javax.swing.JTextField jTextField1) {
-
+        
         switch (escolha) {
             case '+':
                 resultado = num1.add(num2);

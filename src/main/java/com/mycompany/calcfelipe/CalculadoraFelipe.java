@@ -96,7 +96,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
         jPanel1.setMaximumSize(null);
         jPanel1.setPreferredSize(new java.awt.Dimension(390, 650));
 
-        BotaoAC.setBackground(new java.awt.Color(204, 204, 204));
+        BotaoAC.setBackground(new java.awt.Color(153, 153, 153));
         BotaoAC.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         BotaoAC.setForeground(new java.awt.Color(255, 255, 255));
         BotaoAC.setText("AC");
@@ -111,7 +111,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
             }
         });
 
-        BotaoMaisMenos.setBackground(new java.awt.Color(204, 204, 204));
+        BotaoMaisMenos.setBackground(new java.awt.Color(153, 153, 153));
         BotaoMaisMenos.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         BotaoMaisMenos.setForeground(new java.awt.Color(255, 255, 255));
         BotaoMaisMenos.setText("+/-");
@@ -126,7 +126,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
             }
         });
 
-        BotaoPorcentagem.setBackground(new java.awt.Color(204, 204, 204));
+        BotaoPorcentagem.setBackground(new java.awt.Color(153, 153, 153));
         BotaoPorcentagem.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         BotaoPorcentagem.setForeground(new java.awt.Color(255, 255, 255));
         BotaoPorcentagem.setText("%");
@@ -171,7 +171,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
             }
         });
 
-        Botao9.setBackground(new java.awt.Color(102, 102, 102));
+        Botao9.setBackground(new java.awt.Color(51, 51, 51));
         Botao9.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         Botao9.setForeground(new java.awt.Color(255, 255, 255));
         Botao9.setText("9");
@@ -186,7 +186,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
             }
         });
 
-        Botao8.setBackground(new java.awt.Color(102, 102, 102));
+        Botao8.setBackground(new java.awt.Color(51, 51, 51));
         Botao8.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         Botao8.setForeground(new java.awt.Color(255, 255, 255));
         Botao8.setText("8");
@@ -201,7 +201,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
             }
         });
 
-        Botao7.setBackground(new java.awt.Color(102, 102, 102));
+        Botao7.setBackground(new java.awt.Color(51, 51, 51));
         Botao7.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         Botao7.setForeground(new java.awt.Color(255, 255, 255));
         Botao7.setText("7");
@@ -216,7 +216,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
             }
         });
 
-        Botao4.setBackground(new java.awt.Color(102, 102, 102));
+        Botao4.setBackground(new java.awt.Color(51, 51, 51));
         Botao4.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         Botao4.setForeground(new java.awt.Color(255, 255, 255));
         Botao4.setText("4");
@@ -231,7 +231,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
             }
         });
 
-        Botao5.setBackground(new java.awt.Color(102, 102, 102));
+        Botao5.setBackground(new java.awt.Color(51, 51, 51));
         Botao5.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         Botao5.setForeground(new java.awt.Color(255, 255, 255));
         Botao5.setText("5");
@@ -246,7 +246,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
             }
         });
 
-        Botao6.setBackground(new java.awt.Color(102, 102, 102));
+        Botao6.setBackground(new java.awt.Color(51, 51, 51));
         Botao6.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         Botao6.setForeground(new java.awt.Color(255, 255, 255));
         Botao6.setText("6");
@@ -291,7 +291,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
             }
         });
 
-        BotaoPonto.setBackground(new java.awt.Color(102, 102, 102));
+        BotaoPonto.setBackground(new java.awt.Color(51, 51, 51));
         BotaoPonto.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         BotaoPonto.setForeground(new java.awt.Color(255, 255, 255));
         BotaoPonto.setText(".");
@@ -306,7 +306,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
             }
         });
 
-        Botao0.setBackground(new java.awt.Color(102, 102, 102));
+        Botao0.setBackground(new java.awt.Color(51, 51, 51));
         Botao0.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         Botao0.setForeground(new java.awt.Color(255, 255, 255));
         Botao0.setText("0");
@@ -321,7 +321,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
             }
         });
 
-        Botao3.setBackground(new java.awt.Color(102, 102, 102));
+        Botao3.setBackground(new java.awt.Color(51, 51, 51));
         Botao3.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         Botao3.setForeground(new java.awt.Color(255, 255, 255));
         Botao3.setText("3");
@@ -336,7 +336,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
             }
         });
 
-        Botao2.setBackground(new java.awt.Color(102, 102, 102));
+        Botao2.setBackground(new java.awt.Color(51, 51, 51));
         Botao2.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         Botao2.setForeground(new java.awt.Color(255, 255, 255));
         Botao2.setText("2");
@@ -351,7 +351,7 @@ public class CalculadoraFelipe extends javax.swing.JFrame {
             }
         });
 
-        Botao1.setBackground(new java.awt.Color(102, 102, 102));
+        Botao1.setBackground(new java.awt.Color(51, 51, 51));
         Botao1.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         Botao1.setForeground(new java.awt.Color(255, 255, 255));
         Botao1.setText("1");
